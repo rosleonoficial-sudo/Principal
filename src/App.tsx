@@ -96,7 +96,7 @@ export default function App() {
         <InteractivePlayer />
 
         {/* 4. Instant Action Button & Trust elements */}
-        <div id="action-buttons" className="w-full max-w-lg mx-auto px-4 flex flex-col items-center mt-4 mb-4 text-center">
+        <div id="action-buttons" className="w-full max-w-lg mx-auto px-4 flex flex-col items-center mt-4 mb-2 text-center">
           
           {/* Main Pulsing Pill CTA */}
           <button
@@ -174,6 +174,19 @@ export default function App() {
         {/* Real-time viewer count badge below buttons */}
         <div className="mb-4 flex flex-col items-center">
           <LiveViewerCounter />
+
+          {/* Sorteio Mensal Compact Card */}
+          <div className="w-full max-w-md px-4 mt-0.5 mb-2.5">
+            <div className="bg-amber-50/95 border border-amber-200/90 rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-xs text-center flex flex-col items-center select-none">
+              <div className="flex items-center justify-center gap-1.5 text-amber-950 font-black text-xs sm:text-sm tracking-wide uppercase">
+                <span className="text-base sm:text-lg leading-none" role="img" aria-label="presente">🎁</span>
+                <span>TODO MÊS TEM SORTEIO!</span>
+              </div>
+              <p className="text-[11.5px] min-[390px]:text-xs sm:text-sm text-amber-900/90 font-medium leading-snug sm:leading-relaxed mt-1 max-w-sm mx-auto">
+                Além das ofertas, fazemos sorteios mensais para quem participa dos nossos grupos. Entre e acompanhe as regras e o prêmio do mês.
+              </p>
+            </div>
+          </div>
           
           {/* Past Offers Showcase Carousel */}
           <PastOffersCarousel />
