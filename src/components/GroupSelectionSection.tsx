@@ -1,7 +1,19 @@
 import React from 'react';
-import { Smartphone, Dumbbell, Home, Star, Plus, TrendingUp, Calendar, ArrowUp } from 'lucide-react';
+import { Smartphone, Dumbbell, Home, Car, Star, Plus, TrendingUp, Calendar, ArrowUp } from 'lucide-react';
 
-export const GroupSelectionSection: React.FC = () => {
+interface GroupSelectionSectionProps {
+  onOpenEletronicos?: (e?: React.MouseEvent) => void;
+  onOpenFitness?: (e?: React.MouseEvent) => void;
+  onOpenOfertasGerais?: (e?: React.MouseEvent) => void;
+  onOpenAutomotivo?: (e?: React.MouseEvent) => void;
+}
+
+export const GroupSelectionSection: React.FC<GroupSelectionSectionProps> = ({
+  onOpenEletronicos,
+  onOpenFitness,
+  onOpenOfertasGerais,
+  onOpenAutomotivo,
+}) => {
   const handleScrollToButtons = () => {
     const el = document.getElementById('action-buttons');
     if (el) {
@@ -37,7 +49,7 @@ export const GroupSelectionSection: React.FC = () => {
       <div className="space-y-2">
         {/* Card 1: Grupo Eletrônicos */}
         <div 
-          onClick={handleScrollToButtons}
+          onClick={onOpenEletronicos || handleScrollToButtons}
           className="bg-white rounded-xl border border-zinc-200/90 shadow-2xs hover:shadow-md hover:border-emerald-300 p-2 sm:p-2.5 flex flex-row items-center gap-2.5 transition-all cursor-pointer active:scale-[0.98]"
         >
           {/* Left Visual Container */}
@@ -70,7 +82,7 @@ export const GroupSelectionSection: React.FC = () => {
 
         {/* Card 2: Grupo Fitness */}
         <div 
-          onClick={handleScrollToButtons}
+          onClick={onOpenFitness || handleScrollToButtons}
           className="bg-white rounded-xl border border-zinc-200/90 shadow-2xs hover:shadow-md hover:border-emerald-300 p-2 sm:p-2.5 flex flex-row items-center gap-2.5 transition-all cursor-pointer active:scale-[0.98]"
         >
           {/* Left Visual Container */}
@@ -101,21 +113,54 @@ export const GroupSelectionSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Card 3: Grupo Ofertas Gerais */}
+        {/* Card 3: Grupo Automotivo */}
         <div 
-          onClick={handleScrollToButtons}
+          onClick={onOpenAutomotivo || handleScrollToButtons}
+          className="bg-white rounded-xl border border-zinc-200/90 shadow-2xs hover:shadow-md hover:border-blue-300 p-2 sm:p-2.5 flex flex-row items-center gap-2.5 transition-all cursor-pointer active:scale-[0.98]"
+        >
+          {/* Left Visual Container */}
+          <div className="w-[85px] sm:w-[95px] h-[58px] sm:h-[62px] bg-gradient-to-br from-blue-500/10 via-indigo-500/15 to-blue-600/20 rounded-lg flex flex-col items-center justify-center relative overflow-hidden shrink-0 border border-blue-200/60 p-0.5 text-center">
+            <div className="flex items-center justify-center gap-0.5 text-base sm:text-lg select-none mb-0.5">
+              <span>🚗</span>
+              <span>🏎️</span>
+              <span>🛞</span>
+            </div>
+            <span className="text-blue-700 bg-blue-100/90 px-1.5 py-0.2 rounded-full text-[8px] font-bold shadow-2xs leading-none">
+              Auto & Carros
+            </span>
+          </div>
+
+          {/* Right Text Info */}
+          <div className="flex-1 min-w-0 text-left">
+            <div className="flex items-center gap-1 mb-0.5">
+              <div className="w-4 h-4 sm:w-5 sm:h-5 rounded bg-blue-100/80 text-blue-600 flex items-center justify-center shrink-0">
+                <Car className="w-2.5 h-2.5 stroke-[2.5]" />
+              </div>
+              <h3 className="text-xs sm:text-sm font-black text-zinc-900 tracking-tight truncate">
+                Grupo Automotivo
+              </h3>
+            </div>
+            <p className="text-zinc-700 text-[10.5px] sm:text-[11.5px] leading-snug">
+              Som, multimídia, <strong className="text-zinc-900 font-bold">acessórios, pneus</strong> e produtos de limpeza. Tudo para o seu carro com <strong className="text-emerald-600 font-bold">ofertas todos os dias.</strong>
+            </p>
+          </div>
+        </div>
+
+        {/* Card 4: Grupo Ofertas Gerais */}
+        <div 
+          onClick={onOpenOfertasGerais || handleScrollToButtons}
           className="bg-white rounded-xl border border-zinc-200/90 shadow-2xs hover:shadow-md hover:border-amber-300 p-2 sm:p-2.5 flex flex-row items-center gap-2.5 transition-all cursor-pointer active:scale-[0.98]"
         >
           {/* Left Visual Container */}
           <div className="w-[85px] sm:w-[95px] h-[58px] sm:h-[62px] bg-gradient-to-br from-amber-500/10 via-orange-500/15 to-amber-600/20 rounded-lg flex flex-col items-center justify-center relative overflow-hidden shrink-0 border border-amber-200/60 p-0.5 text-center">
             <div className="grid grid-cols-2 gap-x-1 gap-y-0 text-xs sm:text-sm select-none mb-0.5">
               <span>🛠️</span>
-              <span>🚗</span>
               <span>🏠</span>
+              <span>👕</span>
               <span>🛒</span>
             </div>
             <span className="text-amber-800 bg-amber-100/95 px-1 py-0.2 rounded-full text-[7.5px] font-bold shadow-2xs leading-none truncate max-w-full">
-              Gerais & Auto
+              Ofertas Gerais
             </span>
           </div>
 
@@ -130,7 +175,7 @@ export const GroupSelectionSection: React.FC = () => {
               </h3>
             </div>
             <p className="text-zinc-700 text-[10.5px] sm:text-[11.5px] leading-snug">
-              Casa, ferramentas, <strong className="text-zinc-900 font-bold">acessórios automotivos</strong> e muito mais com <strong className="text-emerald-600 font-bold">descontos todos os dias.</strong>
+              Casa, ferramentas, <strong className="text-zinc-900 font-bold">roupas, perfumes</strong> e muito mais com <strong className="text-emerald-600 font-bold">descontos todos os dias.</strong>
             </p>
           </div>
         </div>
@@ -139,7 +184,7 @@ export const GroupSelectionSection: React.FC = () => {
       {/* 5. Footer Text */}
       <div className="text-center mt-3 mb-3">
         <p className="text-zinc-700 text-xs font-semibold">
-          💚 Quer aproveitar tudo? Entre nos 3 grupos.
+          💚 Quer aproveitar tudo? Entre nos 4 grupos.
         </p>
       </div>
 
