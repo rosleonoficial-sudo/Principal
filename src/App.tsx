@@ -23,7 +23,7 @@ export default function App() {
       }
     }
     setTimeout(() => {
-      window.open("https://chat.whatsapp.com/CXjfafDlrfn8jgQFvmxmrW?s=cl&p=i&ilr=2", "_blank");
+      window.open("https://chat.whatsapp.com/ITUxAmoDIL3LJux6lqyGCv?s=cl&p=i&ilr=2", "_blank");
     }, 150);
   };
 
