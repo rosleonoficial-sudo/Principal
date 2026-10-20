@@ -65,7 +65,7 @@ export default function App() {
       }
     }
     setTimeout(() => {
-      window.open("https://chat.whatsapp.com/IXTXXeRz2DP1b3ffkFQpKr?s=cl&p=a&ilr=4&iam=0", "_blank");
+      window.open("https://chat.whatsapp.com/JR2u2DVpN0a70YxHIgpaX7?s=cl&p=a&mlu=4&ilr=4&iam=2", "_blank");
     }, 150);
   };
 
