@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import InteractivePlayer from "./components/InteractivePlayer";
 import LiveViewerCounter from "./components/LiveViewerCounter";
 import GroupNotification from "./components/GroupNotification";
 import AboutMe from "./components/AboutMe";
@@ -104,12 +103,8 @@ export default function App() {
         </p>
       </header>
 
-      {/* 3. Interactive Video Section */}
+      {/* 3. Action Buttons & Trust elements */}
       <main className="flex-grow w-full">
-        {/* Gien Liu Video Reel Container */}
-        <InteractivePlayer />
-
-        {/* 4. Instant Action Button & Trust elements */}
         <div id="action-buttons" className="w-full max-w-lg mx-auto px-4 flex flex-col items-center mt-4 mb-2 text-center">
           
           {/* Main Pulsing Pill CTA */}
